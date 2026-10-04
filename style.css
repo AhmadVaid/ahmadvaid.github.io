@@ -1,577 +1,888 @@
-<!DOCTYPE html>
-<html lang="en">
+/* ========================================
+   COLOR PALETTE
+======================================== */
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+:root {
 
-    <title>Ahmad Faraz Vaid | Portfolio</title>
+    --background: #1c211f;
 
-    <meta name="description"
-        content="Personal portfolio of Ahmad Faraz Vaid, Computer and Communication Engineering student.">
+    --surface: #252b28;
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    --surface-light: #303834;
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    --text: #e8ebe7;
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
+    --muted: #a5ada8;
 
-<body>
+    --accent: #91aa9a;
 
-    <!-- ========================================
-         NAVIGATION
-    ========================================= -->
+    --accent-dark: #789282;
 
-    <header>
+    --accent-light: #39463f;
 
-        <nav class="navbar">
+    --border: #3a423e;
 
-            <a href="#home" class="welcome-link">
-                Welcome ↗
-            </a>
+    --shadow:
+        0 12px 35px rgba(0, 0, 0, 0.16);
+}
 
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#education">Education</a>
-                <a href="#skills">Skills</a>
-                <a href="#interests">Interests</a>
-                <a href="#contact">Contact</a>
-            </div>
 
-        </nav>
+/* ========================================
+   GENERAL
+======================================== */
 
-    </header>
+* {
 
+    margin: 0;
 
-    <main>
+    padding: 0;
 
-        <!-- ========================================
-             HERO SECTION
-        ========================================= -->
+    box-sizing: border-box;
 
-        <section class="hero" id="home">
+    scroll-behavior: smooth;
+}
 
-            <div class="hero-content">
 
-                <p class="eyebrow">
-                    HELLO, WORLD! I'M
-                </p>
+body {
 
-                <h1>
-                    Ahmad Faraz<br>
-                    <span>Vaid.</span>
-                </h1>
+    background: var(--background);
 
-                <h2>
-                    Computer & Communication Engineering Student
-                </h2>
+    color: var(--text);
 
-                <p class="hero-description">
-                    I'm a Computer and Communication Engineering student
-                    interested in software development, computer networks,
-                    cybersecurity, and exploring how technology works.
-                    I enjoy learning new concepts, solving problems,
-                    and building things along the way.
-                </p>
+    font-family: 'DM Sans', sans-serif;
 
-                <div class="hero-buttons">
+    line-height: 1.7;
+}
 
-                    <a href="#about" class="btn primary">
-                        Explore My Profile ↘
-                    </a>
 
-                    <a href="#contact" class="btn secondary">
-                        Get in Touch
-                    </a>
+h1,
+h2,
+h3 {
 
-                </div>
+    font-family: 'Space Grotesk', sans-serif;
+}
 
-            </div>
 
+a {
 
-            <!-- Profile Card -->
+    color: inherit;
 
-            <div class="profile-card">
+    text-decoration: none;
+}
 
-                <div class="profile-image">
 
-                    <img
-                        src="images/profile.jpg"
-                        alt="Ahmad Faraz Vaid">
+/* ========================================
+   NAVIGATION
+======================================== */
 
-                </div>
+.navbar {
 
-                <p class="profile-caption">
-                    STUDENT · DEVELOPER · EXPLORER
-                </p>
+    max-width: 1150px;
 
-                <div class="profile-line"></div>
+    margin: auto;
 
-                <p class="profile-location">
-                    Manipal, India
-                </p>
+    padding: 28px 30px;
 
-            </div>
+    display: flex;
 
-        </section>
+    justify-content: space-between;
 
+    align-items: center;
+}
 
-        <!-- ========================================
-             ABOUT SECTION
-        ========================================= -->
 
-        <section class="section" id="about">
+.welcome-link {
 
-            <div class="section-heading">
+    margin-right: auto;
 
-                <span>
-                    01 / ABOUT
-                </span>
+    color: var(--accent);
 
-                <h2>
-                    A little about me.
-                </h2>
+    font-size: 13px;
 
-            </div>
+    font-weight: 600;
 
+    letter-spacing: 0.5px;
 
-            <div class="about-content">
+    transition: 0.2s;
+}
 
-                <p>
-                    I'm Ahmad Faraz Vaid, an undergraduate student pursuing
-                    a B.Tech in Computer and Communication Engineering at
-                    Manipal Institute of Technology.
-                </p>
 
-                <p>
-                    My academic interests span programming, computer
-                    systems, networking, cybersecurity, databases,
-                    algorithms, embedded systems, and the fundamentals
-                    of intelligent systems. I enjoy understanding how
-                    things work, solving technical problems, and
-                    experimenting with new technologies.
-                </p>
+.welcome-link:hover {
 
-                <p>
-                    Beyond technology, I enjoy chess, reading books,
-                    trekking, exploring new places, and learning about
-                    ideas involving cities, technology, and the world
-                    around us.
-                </p>
+    color: var(--text);
 
-            </div>
+    transform: translateX(3px);
+}
 
-        </section>
 
+.nav-links {
 
-        <!-- ========================================
-             EDUCATION SECTION
-        ========================================= -->
+    display: flex;
 
-        <section class="section" id="education">
+    gap: 30px;
 
-            <div class="section-heading">
+    font-size: 13px;
 
-                <span>
-                    02 / EDUCATION
-                </span>
+    color: var(--muted);
+}
 
-                <h2>
-                    Academic background.
-                </h2>
 
-            </div>
+.nav-links a {
 
+    transition: 0.2s;
+}
 
-            <div class="education-card">
 
-                <!-- University Logo -->
+.nav-links a:hover {
 
-                <div class="education-logo">
+    color: var(--accent);
+}
 
-                    <img
-                        src="images/mit-logo.png"
-                        alt="Manipal Institute of Technology logo">
 
-                </div>
+/* ========================================
+   HERO
+======================================== */
 
+.hero {
 
-                <!-- University Details -->
+    max-width: 1100px;
 
-                <div class="education-details">
+    min-height: 580px;
 
-                    <div class="education-year">
-                        UNDERGRADUATE
-                    </div>
+    margin: auto;
 
-                    <h3>
-                        Bachelor of Technology
-                    </h3>
+    padding: 80px 30px 100px;
 
-                    <p class="degree">
-                        Computer and Communication Engineering
-                    </p>
+    display: flex;
 
-                    <p class="institution">
-                        Manipal Institute of Technology
-                    </p>
+    align-items: center;
 
-                    <p class="muted">
-                        Manipal, Karnataka, India
-                    </p>
+    justify-content: space-between;
 
-                </div>
+    gap: 60px;
+}
 
-            </div>
 
-        </section>
+.hero-content {
 
+    max-width: 650px;
+}
 
-        <!-- ========================================
-             SKILLS SECTION
-        ========================================= -->
 
-        <section class="section" id="skills">
+.eyebrow {
 
-            <div class="section-heading">
+    color: var(--accent);
 
-                <span>
-                    03 / TECHNICAL SKILLS
-                </span>
+    font-size: 12px;
 
-                <h2>
-                    Things I work with.
-                </h2>
+    letter-spacing: 3px;
 
-            </div>
+    font-weight: 700;
+}
 
 
-            <div class="skills-grid">
+.hero h1 {
 
+    font-size: clamp(55px, 8vw, 88px);
 
-                <!-- Programming -->
+    line-height: 1.05;
 
-                <div class="skill-card">
+    margin: 20px 0;
 
-                    <div class="skill-number">
-                        01
-                    </div>
+    letter-spacing: -4px;
+}
 
-                    <h3>
-                        Programming
-                    </h3>
 
-                    <div class="tags">
+.hero h1 span {
 
-                        <span>C</span>
-                        <span>Java</span>
-                        <span>Python</span>
+    color: var(--accent);
+}
 
-                    </div>
 
-                </div>
+.hero h2 {
 
+    font-size: 18px;
 
-                <!-- Web Development -->
+    font-weight: 500;
 
-                <div class="skill-card">
+    color: #c5ccc8;
+}
 
-                    <div class="skill-number">
-                        02
-                    </div>
 
-                    <h3>
-                        Web Development
-                    </h3>
+.hero-description {
 
-                    <div class="tags">
+    max-width: 510px;
 
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>Node.js</span>
+    margin: 20px 0 30px;
 
-                    </div>
+    color: var(--muted);
+}
 
-                </div>
 
+/* ========================================
+   BUTTONS
+======================================== */
 
-                <!-- Computer Science -->
+.hero-buttons {
 
-                <div class="skill-card">
+    display: flex;
 
-                    <div class="skill-number">
-                        03
-                    </div>
+    gap: 12px;
 
-                    <h3>
-                        Computer Science
-                    </h3>
+    flex-wrap: wrap;
+}
 
-                    <div class="tags">
 
-                        <span>Data Structures</span>
-                        <span>Algorithms</span>
-                        <span>Operating Systems</span>
-                        <span>DBMS</span>
-                        <span>Computer Networks</span>
+.btn {
 
-                    </div>
+    display: inline-block;
 
-                </div>
+    padding: 12px 20px;
 
+    border-radius: 8px;
 
-                <!-- Security & Data -->
+    font-size: 13px;
 
-                <div class="skill-card">
+    font-weight: 600;
 
-                    <div class="skill-number">
-                        04
-                    </div>
+    transition: 0.25s;
+}
 
-                    <h3>
-                        Security & Data
-                    </h3>
 
-                    <div class="tags">
+.primary {
 
-                        <span>Cryptography</span>
-                        <span>SQL</span>
-                        <span>MySQL</span>
-                        <span>Machine Learning</span>
+    background: var(--accent);
 
-                    </div>
+    color: #1c211f;
+}
 
-                </div>
 
+.primary:hover {
 
-                <!-- Tools & Platforms -->
+    background: #a5bbad;
 
-                <div class="skill-card">
+    transform: translateY(-3px);
+}
 
-                    <div class="skill-number">
-                        05
-                    </div>
 
-                    <h3>
-                        Tools & Platforms
-                    </h3>
+.secondary {
 
-                    <div class="tags">
+    border: 1px solid var(--border);
 
-                        <span>Git</span>
-                        <span>GitHub</span>
-                        <span>VS Code</span>
-                        <span>Linux</span>
+    background: transparent;
+}
 
-                    </div>
 
-                </div>
+.secondary:hover {
 
+    border-color: var(--accent);
 
-                <!-- Embedded Systems -->
+    color: var(--accent);
+}
 
-                <div class="skill-card">
 
-                    <div class="skill-number">
-                        06
-                    </div>
+/* ========================================
+   PROFILE CARD
+======================================== */
 
-                    <h3>
-                        Embedded Systems
-                    </h3>
+.profile-card {
 
-                    <div class="tags">
+    width: 280px;
 
-                        <span>Microcontrollers</span>
-                        <span>Embedded Systems</span>
-                        <span>Embedded Programming</span>
-                        <span>C</span>
+    padding: 15px;
 
-                    </div>
+    background: var(--surface);
 
-                </div>
+    border: 1px solid var(--border);
 
-            </div>
+    border-radius: 18px;
 
-        </section>
+    text-align: center;
 
+    transform: rotate(2deg);
 
-        <!-- ========================================
-             INTERESTS SECTION
-        ========================================= -->
+    box-shadow: var(--shadow);
+}
 
-        <section class="section" id="interests">
 
-            <div class="section-heading">
+.profile-image {
 
-                <span>
-                    04 / BEYOND THE SCREEN
-                </span>
+    width: 100%;
 
-                <h2>
-                    Interests & hobbies.
-                </h2>
+    height: 300px;
 
-            </div>
+    overflow: hidden;
 
+    border-radius: 12px;
 
-            <div class="interests-grid">
+    background: var(--surface-light);
+}
 
 
-                <!-- Chess -->
+.profile-image img {
 
-                <div class="interest-card">
+    width: 100%;
 
-                    <span class="interest-icon">
-                        ♟
-                    </span>
+    height: 100%;
 
-                    <h3>
-                        Chess
-                    </h3>
+    object-fit: cover;
+}
 
-                    <p>
-                        Strategy, patience, and thinking
-                        several moves ahead.
-                    </p>
 
-                </div>
+.profile-caption {
 
+    font-size: 10px;
 
-                <!-- Reading -->
+    color: var(--accent);
 
-                <div class="interest-card">
+    letter-spacing: 2px;
 
-                    <span class="interest-icon">
-                        📖
-                    </span>
+    margin-top: 17px;
+}
 
-                    <h3>
-                        Reading
-                    </h3>
 
-                    <p>
-                        Books, ideas, philosophy, and
-                        discovering new perspectives.
-                    </p>
+.profile-line {
 
-                </div>
+    width: 40px;
 
+    height: 2px;
 
-                <!-- Trekking -->
+    background: var(--border);
 
-                <div class="interest-card">
+    margin: 12px auto;
+}
 
-                    <span class="interest-icon">
-                        ⛰
-                    </span>
 
-                    <h3>
-                        Trekking
-                    </h3>
+.profile-location {
 
-                    <p>
-                        Exploring the outdoors, mountains,
-                        and unfamiliar trails.
-                    </p>
+    font-size: 12px;
 
-                </div>
+    color: var(--muted);
+}
 
 
-                <!-- Technology -->
+/* ========================================
+   SECTIONS
+======================================== */
 
-                <div class="interest-card">
+.section {
 
-                    <span class="interest-icon">
-                        ⌘
-                    </span>
+    max-width: 1050px;
 
-                    <h3>
-                        Technology
-                    </h3>
+    margin: auto;
 
-                    <p>
-                        Computing, cybersecurity, and
-                        understanding the digital world.
-                    </p>
+    padding: 90px 30px;
 
-                </div>
+    border-top: 1px solid var(--border);
+}
 
-            </div>
 
-        </section>
+.section-heading {
 
+    margin-bottom: 35px;
+}
 
-        <!-- ========================================
-             CONTACT SECTION
-        ========================================= -->
 
-        <section class="contact-section" id="contact">
+.section-heading span,
+.contact-section > span {
 
-            <span>
-                05 / CONTACT
-            </span>
+    color: var(--accent);
 
-            <h2>
-                Let's connect.
-            </h2>
+    font-size: 12px;
 
-            <p>
-                Have an interesting idea or just want to talk?
-                Feel free to reach out.
-            </p>
+    letter-spacing: 3px;
 
+    font-weight: 700;
+}
 
-            <div class="contact-links">
 
-                <a href="mailto:ahmadfaraz2419@gmail.com">
-                    Email ↗
-                </a>
+.section-heading h2,
+.contact-section h2 {
 
-                <a
-                    href="https://www.linkedin.com/in/ahmadvaid/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    LinkedIn ↗
-                </a>
+    font-size: 36px;
 
-                <a
-                    href="https://github.com/AhmadVaid"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    GitHub ↗
-                </a>
+    margin-top: 8px;
+}
 
-            </div>
 
-        </section>
+/* ========================================
+   ABOUT
+======================================== */
 
-    </main>
+.about-content {
 
+    max-width: 780px;
+}
 
-    <!-- ========================================
-         FOOTER
-    ========================================= -->
 
-    <footer>
+.about-content p {
 
-        <p>
-            © 2026 Ahmad Faraz Vaid
-        </p>
+    color: var(--muted);
 
-        <p>
-            Designed & built with HTML and CSS.
-        </p>
+    margin-bottom: 18px;
+}
 
-    </footer>
 
-</body>
+/* ========================================
+   EDUCATION
+======================================== */
 
-</html>
+.education-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 30px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.education-logo {
+
+    width: 110px;
+
+    height: 110px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    padding: 12px;
+}
+
+
+.education-logo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+.education-details {
+
+    flex: 1;
+}
+
+
+.education-year {
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+
+.education-card h3 {
+
+    font-size: 22px;
+}
+
+
+.degree {
+
+    color: var(--accent);
+
+    margin: 5px 0;
+}
+
+
+.institution {
+
+    font-weight: 600;
+
+    color: #d7ddd9;
+}
+
+
+.muted {
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   SKILLS
+======================================== */
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.skill-card {
+
+    padding: 25px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    transition: 0.25s;
+
+    box-shadow: var(--shadow);
+}
+
+
+.skill-card:hover,
+.interest-card:hover {
+
+    border-color: var(--accent);
+
+    transform: translateY(-4px);
+}
+
+
+.skill-number {
+
+    color: var(--accent);
+
+    font-size: 12px;
+}
+
+
+.skill-card h3 {
+
+    margin: 12px 0 18px;
+}
+
+
+/* ========================================
+   SKILL TAGS
+======================================== */
+
+.tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.tags span {
+
+    padding: 6px 12px;
+
+    background: var(--accent-light);
+
+    border: 1px solid #4a584f;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    color: #bccbc2;
+}
+
+
+/* ========================================
+   INTERESTS
+======================================== */
+
+.interests-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+
+.interest-card {
+
+    padding: 20px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    transition: 0.25s;
+
+    box-shadow: var(--shadow);
+}
+
+
+.interest-icon {
+
+    font-size: 25px;
+
+    color: var(--accent);
+}
+
+
+.interest-card h3 {
+
+    margin: 15px 0 8px;
+
+    font-size: 17px;
+}
+
+
+.interest-card p {
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.contact-section {
+
+    text-align: center;
+
+    padding: 100px 25px;
+
+    background: #252d29;
+
+    border-top: 1px solid var(--border);
+}
+
+
+.contact-section p {
+
+    color: var(--muted);
+
+    margin: 12px 0 30px;
+}
+
+
+.contact-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+.contact-links a {
+
+    padding: 10px 20px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    background: transparent;
+
+    transition: 0.2s;
+}
+
+
+.contact-links a:hover {
+
+    color: var(--accent);
+
+    border-color: var(--accent);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 25px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 850px) {
+
+    .skills-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 750px) {
+
+    .navbar {
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding: 22px;
+    }
+
+
+    .welcome-link {
+
+        margin-right: 0;
+
+        margin-bottom: 12px;
+    }
+
+
+    .nav-links {
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        font-size: 12px;
+    }
+
+
+    .hero {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 60px;
+    }
+
+
+    .hero-buttons {
+
+        justify-content: center;
+    }
+
+
+    .profile-card {
+
+        width: min(280px, 100%);
+    }
+
+
+    .section {
+
+        padding: 65px 22px;
+    }
+
+
+    .skills-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .interests-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .education-card {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+
+    .education-logo {
+
+        width: 90px;
+
+        height: 90px;
+    }
+
+
+    footer {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 8px;
+
+        text-align: center;
+    }
+
+}
+
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 400px) {
+
+    .interests-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .hero h1 {
+
+        font-size: 55px;
+    }
+
+}
